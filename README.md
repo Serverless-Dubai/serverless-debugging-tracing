@@ -48,7 +48,7 @@
 3. handle error with try / catch
 4. add callback(err) to catch block
 
-## Sept 3.1: error reporting
+## Step 3.1: error reporting
 
 1. install serverless-plugin-aws-alerts plugin
   * ` npm i serverless-plugin-aws-alerts --save`
@@ -56,3 +56,10 @@
 3. verfiy that SNS topic is created, confirm email
 4. call endpoint multiple times and confirm to get notification
 
+## Step 4: AWS X-Ray
+
+1. install x-ray sdk
+  * `npm i aws-xray-sdk --save`
+2. setup function for tracing
+  * require xray sdk `const AWSXRay = require('aws-xray-sdk');`
+  * set tracing for https `const https   = AWSXRay.captureHTTPs(require('https'));`

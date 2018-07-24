@@ -1,4 +1,6 @@
-let AWS = require('aws-sdk');
+const AWSXRay = require('aws-xray-sdk');
+let AWS = AWSXRay.captureAWS(require('aws-sdk'));
+const https = AWSXRay.captureHTTPs(require('https'));
 const uuid = require('uuid');
 
 const { awsRegion, streamName} = require('./config');

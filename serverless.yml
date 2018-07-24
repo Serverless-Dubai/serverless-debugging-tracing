@@ -1,6 +1,7 @@
 service: serverless-meetup-debugging-tracing
 
 plugins:
+  - serverless-plugin-tracing
   - serverless-plugin-aws-alerts
 
 custom:
@@ -18,6 +19,7 @@ custom:
 provider:
   name: aws
   runtime: nodejs8.10
+  tracing: true
   stage: dev
   region: us-east-1
   iamRoleStatements:
@@ -33,6 +35,11 @@ provider:
         - logs:CreateLogStream
         - logs:PutLogEvents
       Resource: "*"
+    - Effect: Allow
+      Action:
+        - xray:PutTraceSegments
+        - xray:PutTelemetryRecords
+      Resource: '*'
 
 
 functions:
