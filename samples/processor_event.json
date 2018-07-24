@@ -1,0 +1,20 @@
+{
+    "Records": [
+        {
+            "kinesis": {
+                "kinesisSchemaVersion": "1.0",
+                "partitionKey": "0da47d00-8f66-11e8-afce-b39a918542ca",
+                "sequenceNumber": "49586639896504883967294161544438929280606917874308612098",
+                "data": "eyJyZXNvdXJjZSI6Ii9oZWxsbyIsInBhdGgiOiIvaGVsbG8iLCJodHRwTWV0aG9kIjoiR0VUIiwiaGVhZGVycyI6eyJBY2NlcHQiOiIqLyoiLCJDbG91ZEZyb250LUZvcndhcmRlZC1Qcm90byI6Imh0dHBzIiwiQ2xvdWRGcm9udC1Jcy1EZXNrdG9wLVZpZXdlciI6InRydWUiLCJDbG91ZEZyb250LUlzLU1vYmlsZS1WaWV3ZXIiOiJmYWxzZSIsIkNsb3VkRnJvbnQtSXMtU21hcnRUVi1WaWV3ZXIiOiJmYWxzZSIsIkNsb3VkRnJvbnQtSXMtVGFibGV0LVZpZXdlciI6ImZhbHNlIiwiQ2xvdWRGcm9udC1WaWV3ZXItQ291bnRyeSI6IkFFIiwiSG9zdCI6InV5dmhsaHp2eGwuZXhlY3V0ZS1hcGkudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20iLCJVc2VyLUFnZW50IjoiY3VybC83LjU0LjAiLCJWaWEiOiIyLjAgZDVlMmUwODBlNGMyYzZjODMyN2Y2ZDBlYWNkYTRlMTIuY2xvdWRmcm9udC5uZXQgKENsb3VkRnJvbnQpIiwiWC1BbXotQ2YtSWQiOiJXUC1ZOEtXUjU0SUZHSmU0ZWlZcW42dlRlQTdIeS1ROEg0Q010aGZJZUZ0Tm1PazBKSTdoREE9PSIsIlgtQW16bi1UcmFjZS1JZCI6IlJvb3Q9MS01YjU3NjAyZS1iNzViZTVhNTI0OGZhZjk4MThlMDdjMzkiLCJYLUZvcndhcmRlZC1Gb3IiOiI5NC4yMDcuMjA4LjI0NSwgNTIuNDYuMjMuMTciLCJYLUZvcndhcmRlZC1Qb3J0IjoiNDQzIiwiWC1Gb3J3YXJkZWQtUHJvdG8iOiJodHRwcyJ9LCJxdWVyeVN0cmluZ1BhcmFtZXRlcnMiOm51bGwsInBhdGhQYXJhbWV0ZXJzIjpudWxsLCJzdGFnZVZhcmlhYmxlcyI6bnVsbCwicmVxdWVzdENvbnRleHQiOnsicmVzb3VyY2VJZCI6ImduOG10cyIsInJlc291cmNlUGF0aCI6Ii9oZWxsbyIsImh0dHBNZXRob2QiOiJHRVQiLCJleHRlbmRlZFJlcXVlc3RJZCI6IktpdjNNRUNVb0FNRjk3Zz0iLCJyZXF1ZXN0VGltZSI6IjI0L0p1bC8yMDE4OjE3OjIxOjUwICswMDAwIiwicGF0aCI6Ii9kZXYvaGVsbG8iLCJhY2NvdW50SWQiOiIxNDM1MTAzNjU2MDUiLCJwcm90b2NvbCI6IkhUVFAvMS4xIiwic3RhZ2UiOiJkZXYiLCJyZXF1ZXN0VGltZUVwb2NoIjoxNTMyNDUyOTEwMDUzLCJyZXF1ZXN0SWQiOiIwY2U0M2FlNy04ZjY2LTExZTgtODhiOS03OTlhZjE2YWI2YWMiLCJpZGVudGl0eSI6eyJjb2duaXRvSWRlbnRpdHlQb29sSWQiOm51bGwsImFjY291bnRJZCI6bnVsbCwiY29nbml0b0lkZW50aXR5SWQiOm51bGwsImNhbGxlciI6bnVsbCwic291cmNlSXAiOiI5NC4yMDcuMjA4LjI0NSIsImFjY2Vzc0tleSI6bnVsbCwiY29nbml0b0F1dGhlbnRpY2F0aW9uVHlwZSI6bnVsbCwiY29nbml0b0F1dGhlbnRpY2F0aW9uUHJvdmlkZXIiOm51bGwsInVzZXJBcm4iOm51bGwsInVzZXJBZ2VudCI6ImN1cmwvNy41NC4wIiwidXNlciI6bnVsbH0sImFwaUlkIjoidXl2aGxoenZ4bCJ9LCJib2R5IjpudWxsLCJpc0Jhc2U2NEVuY29kZWQiOmZhbHNlfQ==",
+                "approximateArrivalTimestamp": 1532452911.407
+            },
+            "eventSource": "aws:kinesis",
+            "eventVersion": "1.0",
+            "eventID": "shardId-000000000000:49586639896504883967294161544438929280606917874308612098",
+            "eventName": "aws:kinesis:record",
+            "invokeIdentityArn": "arn:aws:iam::143510365605:role/serverless-meetup-debugging-tracing-dev-us-east-1-lambdaRole",
+            "awsRegion": "us-east-1",
+            "eventSourceARN": "arn:aws:kinesis:us-east-1:143510365605:stream/demo-stream"
+        }
+    ]
+}

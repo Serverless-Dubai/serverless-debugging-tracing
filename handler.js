@@ -1,6 +1,28 @@
-'use strict';
+let AWS = require('aws-sdk');
+const uuid = require('uuid');
 
-module.exports.hello = (event, context, callback) => {
+const { awsRegion, streamName} = require('./config');
+AWS.config.update({ region: awsRegion });
+const kinesis = new AWS.Kinesis();
+
+
+async function putRecord(data) {
+  const partitionKey = uuid.v1();
+  const record = {
+    Data: JSON.stringify(data),
+    PartitionKey: partitionKey,
+    StreamName: streamName,
+  };
+  return kinesis.putRecord(record).promise().then(() => {
+    console.log(`Data successfully written to Kinesis.\nPartitionKey: ${partitionKey}\nStreamName: ${streamName}`);
+  });
+}
+
+async function handleRequest(event, context, callback) {
+  
+  // write data to kinesis
+  await putRecord(event);
+  
   const response = {
     statusCode: 200,
     body: JSON.stringify({
@@ -9,6 +31,15 @@ module.exports.hello = (event, context, callback) => {
     }),
   };
 
+  
+
   callback(null, response);
 
 };
+
+
+module.exports = {
+  handleRequest,
+}
+
+

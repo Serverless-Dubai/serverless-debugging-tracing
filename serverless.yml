@@ -6,13 +6,39 @@ provider:
   runtime: nodejs8.10
   stage: dev
   region: us-east-1
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - kinesis:GetRecords
+        - kinesis:GetShardIterator
+        - kinesis:PutRecord
+        - kinesis:PutRecords
+        - kinesis:DescribeStream
+        - kinesis:ListStreams
+        - logs:CreateLogGroup
+        - logs:CreateLogStream
+        - logs:PutLogEvents
+      Resource: "*"
 
 
 functions:
   hello:
-    handler: handler.hello
+    handler: handler.handleRequest
     events:
       - http:
           path: hello
           method: get
+    environment:
+      STREAM_NAME: ${file(./public.env.yml):${opt:stage, self:provider.stage}.eventStreamName}
+      STREAM_ARN: ${file(./public.env.yml):${opt:stage, self:provider.stage}.eventStreamArn}
+  
+  processor:
+    handler: processor.run
+    events:
+      - stream:
+          arn: ${file(./public.env.yml):${opt:stage, self:provider.stage}.eventStreamArn}
+          batchSize: 1
+          startingPosition: LATEST
+          enabeled: true
+    
 
