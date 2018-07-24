@@ -34,12 +34,12 @@ async function handleRequest(event, context, callback) {
   };
 
   // creates error
-  try {
-    console.log(doesNotExist);
-  } catch (err) {
-    console.error(err);
-    callback(err, null);
-  }
+  // try {
+  //   console.log(doesNotExist);
+  // } catch (err) {
+  //   console.error(err);
+  //   callback(err, null);
+  // }
   
 
   callback(null, response);
