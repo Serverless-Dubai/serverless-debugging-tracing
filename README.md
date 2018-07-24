@@ -41,11 +41,18 @@
 
 
 
-## Step 3: logging and error reporting
+## Step 3: logging 
 
 1. add code which causes error, here division by zero
 2. call endpoint; internal error will be in error statistics
 3. handle error with try / catch
 4. add callback(err) to catch block
-5. install serverless-plugin-aws-alerts plugin
+
+## Sept 3.1: error reporting
+
+1. install serverless-plugin-aws-alerts plugin
   * ` npm i serverless-plugin-aws-alerts --save`
+2. add plugin, custom section and alert for function. [plugin reference](https://github.com/ACloudGuru/serverless-plugin-aws-alerts)
+3. verfiy that SNS topic is created, confirm email
+4. call endpoint multiple times and confirm to get notification
+

@@ -1,5 +1,19 @@
 service: serverless-meetup-debugging-tracing
 
+plugins:
+  - serverless-plugin-aws-alerts
+
+custom:
+  alerts:
+    topics:
+      alarm: 
+        topic: all-is-broken
+        notifications:
+          - protocol: email
+            endpoint: blackhole@blackhole.io # set your proper mail here
+    alarms:
+      - functionErrors
+
 
 provider:
   name: aws
@@ -31,6 +45,8 @@ functions:
     environment:
       STREAM_NAME: ${file(./public.env.yml):${opt:stage, self:provider.stage}.eventStreamName}
       STREAM_ARN: ${file(./public.env.yml):${opt:stage, self:provider.stage}.eventStreamArn}
+    alarms:
+      - functionErrors
   
   processor:
     handler: processor.run
