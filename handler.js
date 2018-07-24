@@ -22,7 +22,9 @@ async function handleRequest(event, context, callback) {
   
   // write data to kinesis
   await putRecord(event);
-  
+
+
+
   const response = {
     statusCode: 200,
     body: JSON.stringify({
@@ -31,6 +33,13 @@ async function handleRequest(event, context, callback) {
     }),
   };
 
+  // creates error
+  try {
+    console.log(doesNotExist);
+  } catch (err) {
+    console.error(err);
+    callback(err, null);
+  }
   
 
   callback(null, response);

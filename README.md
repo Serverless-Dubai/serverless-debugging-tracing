@@ -39,3 +39,13 @@
 
 ## Step 2.1: debugging with serverless offline
 
+
+
+## Step 3: logging and error reporting
+
+1. add code which causes error, here division by zero
+2. call endpoint; internal error will be in error statistics
+3. handle error with try / catch
+4. add callback(err) to catch block
+5. install serverless-plugin-aws-alerts plugin
+  * ` npm i serverless-plugin-aws-alerts --save`
